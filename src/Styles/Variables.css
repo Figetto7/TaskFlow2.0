@@ -1,0 +1,19 @@
+:root {
+  --text-color: #000000;
+  --border-form-login-color: #4263b0;
+  --border-form-login-active-color: #000000;
+  --highlight-text-color: #4263b0;
+  --title-color: #4263b0;
+  --theme-color: #ffffff;
+  --gradient-text-color: linear-gradient(90deg, rgba(66, 99, 176, 1) 0%, rgb(5, 77, 245) 100%);
+}
+
+.dark {
+  --text-color: #e2e8f0;
+  --border-form-login-color: #5eead4;
+  --border-form-login-active-color: #7dd3fc;
+  --highlight-text-color: #06b6d4;
+  --title-color: #0891b2;
+  --theme-color: #0f172a;
+  --gradient-text-color: linear-gradient(90deg, rgba(94, 234, 212, 1) 0%, rgba(125, 211, 252, 1) 100%);
+}
