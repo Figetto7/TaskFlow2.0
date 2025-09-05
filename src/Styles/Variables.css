@@ -6,6 +6,11 @@
   --title-color: #4263b0;
   --theme-color: #ffffff;
   --gradient-text-color: linear-gradient(90deg, rgba(66, 99, 176, 1) 0%, rgb(5, 77, 245) 100%);
+  --completed-color: #16a34a;
+  --pending-color: #f59e0b;
+  --total-color: #1b1e22;
+  --overdue-color: #dc2626;
+  --ultra-thin-border-color: #f3f4f6;
 }
 
 .dark {
@@ -16,4 +21,9 @@
   --title-color: #0891b2;
   --theme-color: #0f172a;
   --gradient-text-color: linear-gradient(90deg, rgba(94, 234, 212, 1) 0%, rgba(125, 211, 252, 1) 100%);
+  --completed-color: #22c55e;
+  --pending-color: #fbbf24;
+  --total-color: #dbe3eb;
+  --overdue-color: #ef4444;
+  --ultra-thin-border-color: #4b5563;
 }

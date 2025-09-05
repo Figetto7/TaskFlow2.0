@@ -43,6 +43,11 @@ body {
   border-radius: 0.75rem;
 }
 
+.ultraThinBorder {
+  border: 1px solid var(--ultra-thin-border-color);
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
 
 .gradientText {
   background: var(--gradient-text-color);
