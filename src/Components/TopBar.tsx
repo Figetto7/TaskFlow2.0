@@ -8,7 +8,7 @@ export default function TopBar(): JSX.Element {
     <div className="flex flex-row w-11/12 m-auto mt-3 justify-between border">
       <div className="flex flex-row items-center gap-2 p-4"> 
         <img src="src/Assets/Images/TaskFlowFavIcon.png" alt="TaskFlow Logo" className="logo"  />
-        <h1 className="text-2xl font-semibold">TaskFlow</h1>
+        <h1 className="text-3xl font-semibold">TaskFlow</h1>
       </div>
       <div className="flex flex-row items-center gap-2 p-4">
         <ThemeToggle theme={theme} toggleTheme={toggleTheme} />

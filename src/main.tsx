@@ -5,13 +5,16 @@ import App from "./App";
 import "./Styles/BaseStyles.css"
 import { AuthProvider } from "./Contexts/auth"
 import { ThemeProvider } from "./Contexts/theme";
+import { TaskProvider } from "./Contexts/tasks";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider>
         <AuthProvider>
-          <App />
+          <TaskProvider>
+            <App />
+          </TaskProvider>
         </AuthProvider>
       </ThemeProvider>
     </BrowserRouter>

@@ -16,3 +16,28 @@ export type ThemeContextType = {
   theme: Theme;
   toggleTheme: () => void;
 };
+
+
+export type Task = {
+  id: string,
+  title: string,
+  description: string,
+  completed: boolean,
+  dueDate: Date | null,
+  priority: 'low' | 'medium' | 'high' | "Choose a priority",
+  tags: 'school' | 'work' | 'personal' | 'urgent' | 'others' | 'Choose a category',
+  createdAt: Date,
+  subtasks?: string[],
+  attachments?: string[], 
+}
+
+export type Action = | { type: 'addedTask'; task: Task } | { type: 'deleteTask'; id: string } | { type: 'toggledTask'; id: string } | { type: 'updateTask'; task: Task } | { type: 'Error'; message: string };
+
+
+export type TaskContextType =  {
+  tasks: Task[];
+  addTask: (newTask: Task) => void;
+  updateTask: (updatedTask: Task) => void;
+  deleteTask: (taskId: string) => void;
+  toggleTaskCompletion: (taskId: string) => void;
+}

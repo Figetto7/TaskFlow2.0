@@ -10,7 +10,7 @@ export default function Arrival(): JSX.Element {
       <p className="lg:text-3xl md:text-xl md:w-1/2">TaskFlow combines the power of AI with intuitive design to help you manage tasks, track progress, and collaborate seamlessly with your team.</p>
       <div className="flex flex-col gap-6 md:flex-row">
         <Link to="/login" className="text-2xl md:text-4xl rounded-lg p-3" style={{backgroundColor: "var(--highlight-text-color)", color: "var(--theme-color)"}}>Get Started</Link>
-        <Link to="/fakeDashboard" className="text-2xl md:text-3xl gradientText border p-3 rounded-lg">Watch a Demo</Link>
+        <Link to="/dashboard" className="text-2xl md:text-3xl gradientText border p-3 rounded-lg">Watch a Demo</Link>
       </div>
     </section>
   )

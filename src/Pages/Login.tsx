@@ -17,7 +17,7 @@ export default function Login() {
     setErr("");
     try {
       await signInWithEmail(email, password);
-      navigate("/dashboard");
+      navigate("/home");
     } catch (err) {
       setErr(parseFirebaseError(err));
 
@@ -27,7 +27,7 @@ export default function Login() {
   async function handleGoogleAccess() {
   try {
     await signInWithGoogle();
-    navigate("/dashboard");
+    navigate("/home");
   } catch (err) {
     setErr(parseFirebaseError(err));
   }
