@@ -11,6 +11,16 @@
   --total-color: #1b1e22;
   --overdue-color: #dc2626;
   --ultra-thin-border-color: #f3f4f6;
+  --completed-title: #166534;
+  --completed-subtitle: #22c55e;
+  --pending-title: #92400e;
+  --pending-subtitle: #f59e0b;
+  --overdue-bg: #fef2f2;
+  --overdue-title: #991b1b;
+  --overdue-subtitle: #ef4444;
+  --priority-high-text: #991b1b;
+  --priority-medium-text: #c2410c;
+  --priority-low-text: #166534;
 }
 
 .dark {
@@ -26,4 +36,15 @@
   --total-color: #dbe3eb;
   --overdue-color: #ef4444;
   --ultra-thin-border-color: #4b5563;
+  --completed-title: #bbf7d0;
+  --completed-subtitle: #4ade80;
+  --pending-title: #fed7aa;
+  --pending-subtitle: #fb923c;
+  --overdue-bg: #450a0a;
+  --overdue-title: #fecaca;
+  --overdue-subtitle: #f87171;
+  --priority-high-text: #fca5a5;
+  --priority-medium-text: #fdba74;
+  --priority-low-text: #86efac;
 }
+  

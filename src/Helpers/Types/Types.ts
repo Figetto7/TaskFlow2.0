@@ -23,12 +23,10 @@ export type Task = {
   title: string,
   description: string,
   completed: boolean,
-  dueDate: Date | null,
+  dueDate: Date ,
   priority: 'low' | 'medium' | 'high' | "Choose a priority",
   tags: 'school' | 'work' | 'personal' | 'urgent' | 'others' | 'Choose a category',
-  createdAt: Date,
-  subtasks?: string[],
-  attachments?: string[], 
+  createdAt: Date
 }
 
 export type Action = | { type: 'addedTask'; task: Task } | { type: 'deleteTask'; id: string } | { type: 'toggledTask'; id: string } | { type: 'updateTask'; task: Task } | { type: 'Error'; message: string };
