@@ -18,10 +18,10 @@ export default function Dashboard(): JSX.Element {
         <div><StatTaskCard key="overdue" title="Overdue" value={overdue} color="var(--overdue-color)" /></div>
       </div>
     </section>
-    <section>
-      <div className="m-4 p-4 ultraThinBorder md:w-11/12 md:m-auto mt-6 md:mt-8">
-        <h1 className="text-xl md:text-2xl font-bold">Tasks Overview</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <section className="md:w-1/2">
+      <div className="m-4 p-4 md:w-11/12 md:m-auto mt-6">
+        <h1 className="text-3xl font-bold ml-2">Tasks Overview</h1>
+        <div className="grid grid-cols-1 gap-4">
           {DummyTasks.map(task => <TaskCard key={task.id} task={task} />)}
         </div>
       </div>

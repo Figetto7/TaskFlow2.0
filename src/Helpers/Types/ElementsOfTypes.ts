@@ -1,8 +1,17 @@
 import type { Task } from "./Types";
 
 export const errorTask: Task[] = [
-  {id: "1", title: "Errore", description: "Errore nel Caricare le Task", completed: false, dueDate: new Date(), priority: "high", tags: "work", createdAt: new Date()},
-]
+  {
+    id: "1",
+    title: "Errore",
+    description: "Errore nel Caricare le Task",
+    completed: false,
+    dueDate: new Date(),
+    priority: "high",
+    tags: "work",
+    createdAt: new Date()
+  }
+];
 
 
 
@@ -16,20 +25,16 @@ export const DummyTasks: Task[] = [
     priority: "medium",
     tags: "personal",
     createdAt: new Date(),
-    subtasks: [],
-    attachments: [],
   },
   {
     id: "2",
     title: "Summer vacation 2025",
     description: "Plan and book vacation for August 2025.",
     completed: false,
-    dueDate: new Date("2025-09-01"),
+    dueDate: new Date("2028-09-01"),
     priority: "low",
-    tags: "personal",
+    tags: "others",
     createdAt: new Date(),
-    subtasks: [],
-    attachments: [],
   },
   {
     id: "3",
@@ -40,19 +45,15 @@ export const DummyTasks: Task[] = [
     priority: "medium",
     tags: "work",
     createdAt: new Date(),
-    subtasks: [],
-    attachments: [],
   },
   {
     id: "4",
     title: "Deploy app to production",
     description: "Set up CI/CD and deploy TaskFlow to production server.",
-    completed: false,
+    completed: true,
     dueDate: new Date("2025-12-01"),
     priority: "high",
-    tags: "work",
-    createdAt: new Date(),
-    subtasks: [],
-    attachments: [],
+    tags: "school",
+    createdAt: new Date()
   }
 ];

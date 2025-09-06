@@ -25,7 +25,7 @@ export type Task = {
   completed: boolean,
   dueDate: Date ,
   priority: 'low' | 'medium' | 'high' | "Choose a priority",
-  tags: 'school' | 'work' | 'personal' | 'urgent' | 'others' | 'Choose a category',
+  tags: 'school' | 'work' | 'personal' | 'others' | 'Choose a category',
   createdAt: Date
 }
 

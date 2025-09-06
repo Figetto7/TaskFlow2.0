@@ -56,3 +56,17 @@ body {
   -webkit-text-fill-color: transparent;
   color: transparent; 
   }
+
+
+  @keyframes textPulse {
+  0%, 100% {
+    color: var(--pulse-red-min);
+  }
+  50% {
+    color: var(--pulse-red-max);
+  }
+}
+
+.pulse-text {
+  animation: textPulse var(--pulse-duration) infinite ease-in-out;
+}
