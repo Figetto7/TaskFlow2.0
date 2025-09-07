@@ -1,24 +1,49 @@
 import type { JSX } from "react";
-import type { Task } from "../Helpers/Types/Types";
+import { useState } from "react";
 import { FaCalendar } from "react-icons/fa";
 import getStylesPriority from "../Helpers/Utils/getStylesPriority";
 import getStylesCategory from "../Helpers/Utils/getStylesCategory";
+import { DummyTasks } from "../Helpers/Types/ElementsOfTypes";
+import { useTasks } from "../Hooks/useTasks";
+import DashboardRestrictionModal from "../Components/DashBoardRestrictionModal";
 
-export default function TaskCard({ task }: { task: Task }): JSX.Element {
-  const { priorityText } = getStylesPriority(task.priority);
-  const { tagColor, tagImage } = getStylesCategory(task.tags);
-  const expired = task.dueDate < new Date() && !task.completed;
+export default function TaskCard({ taskId, isDashboard }: { taskId: string, isDashboard?: boolean }): JSX.Element {
+  const { tasks, toggleTaskCompletion } = useTasks();
+  const [showRestrictionModal, setShowRestrictionModal] = useState(false);
+  
+  const selectedTasks = isDashboard ? DummyTasks : tasks;
+  const currentTask = selectedTasks.find(task => task.id === taskId);
+  
+  if (!currentTask) return <div>Task not found</div>;
+  
+  const { priorityText } = getStylesPriority(currentTask.priority);
+  const { tagColor, tagImage } = getStylesCategory(currentTask.tags);
+  const expired = currentTask.dueDate < new Date() && !currentTask.completed;
+
+  const handleTaskToggle = () => {
+    if (isDashboard) {
+      setShowRestrictionModal(true);
+    } else {
+      toggleTaskCompletion(currentTask.id);
+    }
+  };
+
   return (
-    <div className="p-4 m-2 ultraThinBorder flex flex-col gap-2" style={{ opacity: task.completed ? 0.5 : 1, textDecoration: task.completed ? 'line-through' : 'none' }}>
-      {expired && !task.completed && <h1 className="w-full h-1 bg-overdue-color mb-10 rounded-full text-3xl pulse-text">Expired</h1>}
-      <h2 className="text-2xl font-semibold">{task.title}</h2>
-      <p className="text-lg">{task.description}</p>
-      <p> <FaCalendar className="inline-block mr-1 mb-1" /> {task.dueDate.toLocaleDateString()}</p>
-      <div className="flex flex-row justify-between md:justify-start md:gap-4">
-        <p style={{ color: priorityText, backgroundColor: 'transparent' }} className="font-semibold border-2 p-1 rounded-lg text-lg">{task.priority}</p>
-        <p style={{ color: tagColor }} className="flex items-center gap-1 border-2 p-1 rounded-lg font-semibold text-lg">{tagImage} {task.tags}</p>
+    <>
+      <div className="p-4 m-2 ultraThinBorder flex flex-row gap-2" style={{ opacity: currentTask.completed ? 0.5 : 1}}>
+        <input  type="checkbox" checked={currentTask.completed} className="w-6 h-6 accent-var(--completed-color) mt-2"  onChange={handleTaskToggle} />
+        <div className="flex flex-col gap-2">
+        {expired && !currentTask.completed && ( <h1 className="w-full h-1 bg-overdue-color mb-10 rounded-full text-3xl pulse-text">Expired</h1>)}
+        <h2 className="text-2xl font-semibold" style={{ textDecoration: currentTask.completed ? 'line-through' : 'none' }}> {currentTask.title} </h2>
+        <p className="text-lg" style={{ textDecoration: currentTask.completed ? 'line-through' : 'none' }}> {currentTask.description} </p>
+        <p> <FaCalendar className="inline-block mr-1 mb-1" /> </p>
+        <div className="flex flex-row justify-between md:justify-start md:gap-4">
+          <p style={{ color: priorityText, backgroundColor: 'transparent' }} className="font-semibold border-2 p-1 rounded-lg text-lg"> {currentTask.priority} </p>
+          <p style={{ color: tagColor }} className="flex items-center gap-1 border-2 p-1 rounded-lg font-semibold text-lg"> {tagImage} {currentTask.tags} </p>
+        </div>
       </div>
-
-    </div>
+      </div>
+      <DashboardRestrictionModal isOpen={showRestrictionModal} onClose={() => setShowRestrictionModal(false)} />
+    </>
   );
 }

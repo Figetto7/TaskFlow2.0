@@ -1,5 +1,3 @@
-
-
 export default function getStylesPriority(priority: 'low' | 'medium' | 'high' | "Choose a priority"): {  priorityText: string } {
   switch (priority) {
     case 'high':

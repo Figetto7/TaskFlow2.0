@@ -70,3 +70,14 @@ body {
 .pulse-text {
   animation: textPulse var(--pulse-duration) infinite ease-in-out;
 }
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: brightness(0.6);
+    z-index: 999;
+}

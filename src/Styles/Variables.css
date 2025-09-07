@@ -21,6 +21,10 @@
   --work-color: #7c3aed;
   --personal-color: #0891b2;
   --others-color: #2d3035;
+  --modal-bg: #ffffff;
+  --chart-completed: #16a34a;
+  --chart-pending: #f59e0b;
+  --chart-overdue: #dc2626;
 }
 
 .dark {
@@ -46,5 +50,10 @@
   --work-color: #a78bfa;
   --personal-color: #22d3ee;
   --others-color: #9ca3af;
+  --modal-bg: #1f2937;
+  --chart-completed: #22c55e;
+  --chart-pending: #fbbf24;
+  --chart-overdue: #ef4444;
 }
+
   

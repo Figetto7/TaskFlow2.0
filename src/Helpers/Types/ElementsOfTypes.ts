@@ -1,20 +1,5 @@
 import type { Task } from "./Types";
 
-export const errorTask: Task[] = [
-  {
-    id: "1",
-    title: "Errore",
-    description: "Errore nel Caricare le Task",
-    completed: false,
-    dueDate: new Date(),
-    priority: "high",
-    tags: "work",
-    createdAt: new Date()
-  }
-];
-
-
-
 export const DummyTasks: Task[] = [
   {
     id: "1",
@@ -31,7 +16,7 @@ export const DummyTasks: Task[] = [
     title: "Summer vacation 2025",
     description: "Plan and book vacation for August 2025.",
     completed: false,
-    dueDate: new Date("2028-09-01"),
+    dueDate: new Date("2023-09-01"),
     priority: "low",
     tags: "others",
     createdAt: new Date(),
@@ -40,9 +25,9 @@ export const DummyTasks: Task[] = [
     id: "3",
     title: "Advanced TypeScript course",
     description: "Enroll in and complete an online TypeScript course for future projects.",
-    completed: true,
-    dueDate: new Date("2025-10-15"),
-    priority: "medium",
+    completed: false,
+    dueDate: new Date("2023-10-15"),
+    priority: "high",
     tags: "work",
     createdAt: new Date(),
   },
@@ -50,10 +35,71 @@ export const DummyTasks: Task[] = [
     id: "4",
     title: "Deploy app to production",
     description: "Set up CI/CD and deploy TaskFlow to production server.",
-    completed: true,
-    dueDate: new Date("2025-12-01"),
+    completed: false,
+    dueDate: new Date("2022-12-01"),
     priority: "high",
     tags: "school",
     createdAt: new Date()
-  }
+  },
+  {
+  id: "5",
+  title: "Weekly groceries",
+  description: "Buy weekly groceries including fruits, vegetables, and essentials.",
+  completed: false,
+  dueDate: new Date("2025-09-12"),
+  priority: "medium",
+  tags: "personal",
+  createdAt: new Date(),
+},
+{
+  id: "6",
+  title: "Prepare project presentation",
+  description: "Create slides and notes for the upcoming client presentation.",
+  completed: false,
+  dueDate: new Date("2025-09-25"),
+  priority: "medium",
+  tags: "work",
+  createdAt: new Date(),
+},
+{
+  id: "7",
+  title: "Car service",
+  description: "Schedule and complete annual car maintenance service.",
+  completed: false,
+  dueDate: new Date("2025-11-05"),
+  priority: "low",
+  tags: "personal",
+  createdAt: new Date(),
+},
+{
+  id: "8",
+  title: "Study group session",
+  description: "Organize and attend study group session for exam preparation.",
+  completed: true,
+  dueDate: new Date("2025-09-18"),
+  priority: "low",
+  tags: "school",
+  createdAt: new Date(),
+},
+{
+  id: "9",
+  title: "Update portfolio website",
+  description: "Add recent projects and improve the design of personal portfolio website.",
+  completed: true,
+  dueDate: new Date("2025-10-30"),
+  priority: "high",
+  tags: "work",
+  createdAt: new Date(),
+},
+{
+  id: "10",
+  title: "Holiday gift shopping",
+  description: "Buy gifts for family and friends ahead of the holiday season.",
+  completed: true,
+  dueDate: new Date("2025-12-15"),
+  priority: "high",
+  tags: "others",
+  createdAt: new Date(),
+}
+
 ];

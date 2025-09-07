@@ -1,35 +1,34 @@
 import React from "react";
 import { useReducer } from "react";
 import tasksReducer from "../Helpers/Utils/TasksReducer";
-import { errorTask } from "../Helpers/Types/ElementsOfTypes";
 import type { Task } from "../Helpers/Types/Types";
 import type { ReactNode } from "react";
 import type { TaskContextType } from "../Helpers/Types/Types";
-
+import { DummyTasks } from "../Helpers/Types/ElementsOfTypes";
 
 const TaskContext = React.createContext<TaskContextType | undefined>(undefined);
 const TASKS_STORAGE_KEY = import.meta.env.VITE_TASKS_STORAGE_KEY;
 
 function loadTasksFromStorage({
   storage = localStorage,
-  fallback = errorTask,
+  dummyTasks = DummyTasks, 
   key = TASKS_STORAGE_KEY,
 } = {}) {
   try {
     const savedTasks = storage.getItem(key);
-    if (!savedTasks) return fallback;
+    if (!savedTasks) return dummyTasks;
 
     const parsed = JSON.parse(savedTasks);
 
     if (!Array.isArray(parsed)) {
-      console.warn('Formato non valido in localStorage, uso fallback.');
-      return fallback;
+      console.warn('Formato non valido in localStorage, uso dummyTasks.');
+      return dummyTasks;
     }
 
     return parsed;
   } catch (error) {
     console.error('Errore nel caricamento task da localStorage:', error);
-    return fallback;
+    return dummyTasks;
   }
 }
 
@@ -61,8 +60,6 @@ export const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         priority: newTask.priority,
         tags: newTask.tags,
         createdAt: new Date(),
-        subtasks: [],
-        attachments: [],
       }
     });
   }

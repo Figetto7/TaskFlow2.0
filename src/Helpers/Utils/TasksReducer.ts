@@ -14,8 +14,6 @@ export default function TasksReducer(tasks: Task[], action: Action): Task[] {
           priority: action.task.priority,
           tags: action.task.tags,
           createdAt: new Date(),
-          subtasks: action.task.subtasks ?? [],
-          attachments: action.task.attachments ?? [],
         }
       ];
 
