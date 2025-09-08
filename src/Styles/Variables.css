@@ -32,6 +32,11 @@
   --back-to-top-shadow: rgba(0, 0, 0, 0.1);
   --back-to-top-bg-hover: #f9fafb;
   --back-to-top-icon-hover: #374151;
+  --sidebar-bg: #ffffff;
+  --sidebar-text: #374151;
+  --sidebar-nav-item-bg: #f9fafb;
+  --sidebar-nav-item-active: #4263b0;
+  --sidebar-nav-item-hover-bg: #f3f4f6;
 }
 
 .dark {
@@ -68,6 +73,11 @@
   --back-to-top-shadow: rgba(0, 0, 0, 0.3);
   --back-to-top-bg-hover: #4b5563;
   --back-to-top-icon-hover: #ffffff;
+  --sidebar-bg: #0f172a;
+  --sidebar-text: #f9fafb;
+  --sidebar-nav-item-bg: #374151;
+  --sidebar-nav-item-active: #01ccf5;
+  --sidebar-nav-item-hover-bg: #374151;
 }
 
   

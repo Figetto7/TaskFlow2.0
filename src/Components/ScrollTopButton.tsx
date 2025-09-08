@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { JSX } from "react";
+import { FaArrowUp } from "react-icons/fa";
 
 export default function ScrollTopButton  (): JSX.Element {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,7 +27,7 @@ export default function ScrollTopButton  (): JSX.Element {
 
   return (
     <button onClick={scrollToTop} className={`back-to-top  ${ isVisible ? 'visible' : 'hidden' }`}>
-      ↑
+      <FaArrowUp />
     </button>
   );
 };

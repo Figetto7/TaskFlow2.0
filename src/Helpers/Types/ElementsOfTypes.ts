@@ -1,4 +1,8 @@
-import type { Task } from "./Types";
+import type { Task, MenuItem } from "./Types";
+import { IoHomeSharp } from "react-icons/io5";
+import { IoMdAddCircle } from "react-icons/io";
+import { MdChangeCircle } from "react-icons/md";
+import { BsClipboard2DataFill, BsInfoSquareFill } from "react-icons/bs";
 
 export const DummyTasks: Task[] = [
   {
@@ -103,3 +107,11 @@ export const DummyTasks: Task[] = [
 }
 
 ];
+
+export const menuItems: MenuItem[] = [
+    { path: '/Home', label: 'Home', icon: IoHomeSharp },
+    { path: '/AddTask', label: 'Aggiungi Task', icon: IoMdAddCircle },
+    { path: '/ModifyTask', label: 'Modifica Task', icon: MdChangeCircle },
+    { path: '/Analytics', label: 'Analytics', icon: BsClipboard2DataFill },
+    { path: '/About', label: 'About', icon: BsInfoSquareFill }
+  ];

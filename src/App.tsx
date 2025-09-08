@@ -23,11 +23,14 @@ export default function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/reset" element={<ResetPassword />} />
       <Route path="/dashboard" element={<Dashboard />}/>
-      <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>}/>
-      <Route path="/add-task" element={<ProtectedRoute><AddTask /></ProtectedRoute>}/>
-      <Route path="/modify-task" element={<ProtectedRoute><ModifyTask /></ProtectedRoute>}/>
-      <Route path="/analytics" element={<ProtectedRoute><Analytics /></ProtectedRoute>}/>
-      <Route path="/about" element={<ProtectedRoute><About /></ProtectedRoute>}/>
+      <Route path="/*" element={<ProtectedRoute />}>
+        <Route path="home" element={<Home />}/>
+        <Route path="addtask" element={<AddTask />}/>
+        <Route path="modifytask" element={<ModifyTask />}/>
+        <Route path="analytics" element={<Analytics />}/>
+        <Route path="about" element={<About />}/>
+      </Route>
+      
       <Route path="*" element={<Navigate to="/arrival" replace />} />
     </Routes>
   </>
