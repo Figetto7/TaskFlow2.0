@@ -5,6 +5,7 @@ import useTaskStats from "../Hooks/useTaskState";
 import TaskCard from "../Components/TaskCard";
 import PieChartNumberTasks from "../Components/PieChartNumberTasks";
 import GraphCategoryXPriority from "../Components/GraphCategoryXPriority";
+import ScrollTopButton from "../Components/ScrollTopButton";
 
 
 export default function Dashboard(): JSX.Element {
@@ -13,6 +14,7 @@ export default function Dashboard(): JSX.Element {
   return (
   <>
     <section>
+      <ScrollTopButton />
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 items-center align-middle md:w-11/12 md:m-auto md:mt-4 mt-6">
         <div><StatTaskCard key="total" title="Total" value={total} color="var(--total-color)" /></div>
         <div><StatTaskCard key="completed" title="Completed" value={completed} color="var(--completed-color)" /></div>
@@ -37,6 +39,14 @@ export default function Dashboard(): JSX.Element {
         </div>
       </div>
     </section> 
+    <footer className="w-full ultraThinBorder !rounded-sm" style={{backgroundColor: "var(--footer-bg)"}}>
+      <div className="flex flex-col text-center">
+        <h1 className="text-4xl font-bold p-6">Task Flow</h1>
+        <p className="p-1 text-lg">Knowledge & Task Manager</p>
+        <div className="h-1 w-11/12 m-auto rounded-xl" style={{backgroundColor: "var(--ultra-thin-border-color)"}}></div>
+        <p className="p-2 text-lg">© 2025 TaskFlow. All rights reserved.</p>
+      </div>
+    </footer>
   </>
   );
 }

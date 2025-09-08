@@ -25,6 +25,13 @@
   --chart-completed: #16a34a;
   --chart-pending: #f59e0b;
   --chart-overdue: #dc2626;
+  --footer-bg: #f9fafb;
+  --back-to-top-bg: #ffffff;
+  --back-to-top-border: #e5e7eb;
+  --back-to-top-icon: #6b7280;
+  --back-to-top-shadow: rgba(0, 0, 0, 0.1);
+  --back-to-top-bg-hover: #f9fafb;
+  --back-to-top-icon-hover: #374151;
 }
 
 .dark {
@@ -54,6 +61,13 @@
   --chart-completed: #22c55e;
   --chart-pending: #fbbf24;
   --chart-overdue: #ef4444;
+  --footer-bg: #111827;
+  --back-to-top-bg: #374151;
+  --back-to-top-border: #4b5563;
+  --back-to-top-icon: #d1d5db;
+  --back-to-top-shadow: rgba(0, 0, 0, 0.3);
+  --back-to-top-bg-hover: #4b5563;
+  --back-to-top-icon-hover: #ffffff;
 }
 
   

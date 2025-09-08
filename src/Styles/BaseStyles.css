@@ -81,3 +81,39 @@ body {
     backdrop-filter: brightness(0.6);
     z-index: 999;
 }
+
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background-color: var(--back-to-top-bg);
+  border: 1px solid var(--back-to-top-border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px var(--back-to-top-shadow);
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.back-to-top:hover {
+  background-color: var(--back-to-top-bg-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--back-to-top-shadow);
+}
+
+.back-to-top.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
