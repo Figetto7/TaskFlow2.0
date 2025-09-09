@@ -1,4 +1,4 @@
-import type { Task, MenuItem } from "./Types";
+import type { Task, MenuItem, PriorityOption, TagsOption } from "./Types";
 
 
 export const DummyTasks: Task[] = [
@@ -108,7 +108,20 @@ export const DummyTasks: Task[] = [
 export const menuItems: MenuItem[] = [
     { path: '/Home', label: 'Home' },
     { path: '/AddTask', label: 'Add Task' },
-    { path: '/ModifyTask', label: 'Modify Task' },
     { path: '/Analytics', label: 'Analytics' },
     { path: '/About', label: 'About' }
   ];
+
+
+export const priorityOptions: PriorityOption[] = [
+  { value: 'low', label: 'Low' },
+  { value: 'medium', label: 'Medium' },
+  { value: 'high', label: 'High' }
+]
+
+export const tagsOptions: TagsOption[] = [
+  { value: 'school', label: 'School' },
+  { value: 'work', label: 'Work' },
+  { value: 'personal', label: 'Personal' },
+  { value: 'others', label: 'Others' }
+]

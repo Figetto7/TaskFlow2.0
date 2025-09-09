@@ -8,7 +8,6 @@ import Arrival from "./Pages/Arrival";
 import TopBar from "./Components/TopBar";
 import Home from "./Pages/Home";
 import AddTask from "./Pages/AddTask";
-import ModifyTask from "./Pages/ModifyTask";
 import Analytics from "./Pages/Analytics";
 import About from "./Pages/About";
 
@@ -26,7 +25,6 @@ export default function App() {
       <Route path="/*" element={<ProtectedRoute />}>
         <Route path="home" element={<Home />}/>
         <Route path="addtask" element={<AddTask />}/>
-        <Route path="modifytask" element={<ModifyTask />}/>
         <Route path="analytics" element={<Analytics />}/>
         <Route path="about" element={<About />}/>
       </Route>

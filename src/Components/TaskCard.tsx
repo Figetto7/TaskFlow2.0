@@ -30,10 +30,9 @@ export default function TaskCard({ taskId, isDashboard }: { taskId: string, isDa
 
   return (
     <>
-      <div className="p-4 m-2 ultraThinBorder flex flex-row gap-2" style={{ opacity: currentTask.completed ? 0.5 : 1}}>
+      <div className="p-4 m-2 ultraThinBorder flex flex-row gap-2" style={{ opacity: currentTask.completed ? 0.5 : 1, backgroundColor: expired ? 'var(--expired-color)' : ""}}>
         <input  type="checkbox" checked={currentTask.completed} className="w-6 h-6 accent-var(--completed-color) mt-2"  onChange={handleTaskToggle} />
         <div className="flex flex-col gap-2">
-        {expired && !currentTask.completed && ( <h1 className="w-full h-1 bg-overdue-color mb-10 rounded-full text-3xl pulse-text">Expired</h1>)}
         <h2 className="text-2xl font-semibold" style={{ textDecoration: currentTask.completed ? 'line-through' : 'none' }}> {currentTask.title} </h2>
         <p className="text-lg" style={{ textDecoration: currentTask.completed ? 'line-through' : 'none' }}> {currentTask.description} </p>
         <p> <FaCalendar className="inline-block mr-1 mb-1" /> {currentTask.dueDate.toLocaleDateString()}</p>

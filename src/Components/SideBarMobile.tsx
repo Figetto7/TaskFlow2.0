@@ -9,7 +9,7 @@ export default function SideBarMobile({ closeMenu }: { closeMenu: () => void }):
 
   return (
     <div className="fixed inset-10 z-50 flex items-center justify-center mt-20">
-      <Sidebar className="fixed text-center overflow-hidden ultraThinBorder w-3/4 h-[70vh] rounded-lg" backgroundColor='var(--sidebar-bg)' >
+      <Sidebar className="fixed text-center z-50 overflow-hidden ultraThinBorder w-3/4 h-[70vh] rounded-lg" backgroundColor='var(--sidebar-bg)' >
       <Menu rootStyles={{
       ['& .ps-menuitem-root']: {backgroundColor: 'transparent', position: 'relative',},
       ['& .ps-menuitem-root::before']: {content: '""', position: 'absolute', top: '0', left: '8px', right: '8px', bottom: '0', backgroundColor: 'transparent', borderRadius: '0.5rem', transition: 'background-color 0.3s', zIndex: '-1',},

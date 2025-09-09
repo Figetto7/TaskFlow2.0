@@ -45,3 +45,14 @@ export type MenuItem = {
   path: string;
   label: string;
 }
+
+
+export type PriorityOption = {
+  value: "Choose a priority" | "low" | "medium" | "high";
+  label: string;
+}
+
+export type TagsOption = {
+  value: "Choose a category" | "school" | "work" | "personal" | "others";
+  label: string;
+}
