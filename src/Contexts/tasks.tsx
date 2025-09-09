@@ -7,7 +7,7 @@ import type { TaskContextType } from "../Helpers/Types/Types";
 import { DummyTasks } from "../Helpers/Types/ElementsOfTypes";
 
 const TaskContext = React.createContext<TaskContextType | undefined>(undefined);
-const TASKS_STORAGE_KEY = import.meta.env.VITE_TASKS_STORAGE_KEY;
+const TASKS_STORAGE_KEY = import.meta.env.VITE_TASKS_STORAGE_KEY || 'taskflow-tasks';
 
 function loadTasksFromStorage({
   storage = localStorage,
@@ -16,16 +16,27 @@ function loadTasksFromStorage({
 } = {}) {
   try {
     const savedTasks = storage.getItem(key);
-    if (!savedTasks) return dummyTasks;
+    
+    if (!savedTasks) {
 
-    const parsed = JSON.parse(savedTasks);
-
-    if (!Array.isArray(parsed)) {
-      console.warn('Formato non valido in localStorage, uso dummyTasks.');
       return dummyTasks;
     }
 
-    return parsed;
+    const parsed = JSON.parse(savedTasks);
+
+
+    if (!Array.isArray(parsed)) {
+      return dummyTasks;
+    }
+
+    // Converti le date da stringhe a oggetti Date
+    const tasksWithDates = parsed.map(task => ({
+      ...task,
+      dueDate: new Date(task.dueDate),
+      createdAt: new Date(task.createdAt)
+    }));
+
+    return tasksWithDates;
   } catch (error) {
     console.error('Errore nel caricamento task da localStorage:', error);
     return dummyTasks;
@@ -39,6 +50,7 @@ function saveTasksToStorage(tasks: Task[], {
   try {
     const serialized = JSON.stringify(tasks);
     storage.setItem(key, serialized);
+
   } catch (error) {
     console.error('Errore nel salvataggio dei task su localStorage:', error);
   }
@@ -46,7 +58,11 @@ function saveTasksToStorage(tasks: Task[], {
 
 export const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [tasks, dispatch] = useReducer(tasksReducer, loadTasksFromStorage());
-  React.useEffect(() => { saveTasksToStorage(tasks) }, [tasks])
+  
+  
+  React.useEffect(() => { 
+    saveTasksToStorage(tasks) 
+  }, [tasks]);
 
   function addTask (newTask: Task) {
     dispatch({

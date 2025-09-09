@@ -11,7 +11,7 @@ export default function HamburgerMenu(): JSX.Element {
   };
 
   return (
-    <div className="">
+    <div className="fixed">
       <div className="ultraThinBorder w-10 h-10  mt-3 !rounded-none !border-l-0 !rounded-r-xl">
         <button  onClick={toggleMenu} aria-label={isOpen ? "Close menu" : "Open menu"}>
           <HamburgerToXAnimation isOpen={isOpen} />

@@ -1,5 +1,5 @@
 import type { User, UserCredential } from "firebase/auth";
-import type { IconType } from "react-icons";
+
 
 export type AuthContextType = {
   user: User | null;
@@ -44,5 +44,4 @@ export type TaskContextType =  {
 export type MenuItem = {
   path: string;
   label: string;
-  icon: IconType;
 }

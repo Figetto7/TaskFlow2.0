@@ -36,7 +36,7 @@ export default function TaskCard({ taskId, isDashboard }: { taskId: string, isDa
         {expired && !currentTask.completed && ( <h1 className="w-full h-1 bg-overdue-color mb-10 rounded-full text-3xl pulse-text">Expired</h1>)}
         <h2 className="text-2xl font-semibold" style={{ textDecoration: currentTask.completed ? 'line-through' : 'none' }}> {currentTask.title} </h2>
         <p className="text-lg" style={{ textDecoration: currentTask.completed ? 'line-through' : 'none' }}> {currentTask.description} </p>
-        <p> <FaCalendar className="inline-block mr-1 mb-1" /> </p>
+        <p> <FaCalendar className="inline-block mr-1 mb-1" /> {currentTask.dueDate.toLocaleDateString()}</p>
         <div className="flex flex-row justify-between md:justify-start md:gap-4">
           <p style={{ color: priorityText, backgroundColor: 'transparent' }} className="font-semibold border-2 p-1 rounded-lg text-lg"> {currentTask.priority} </p>
           <p style={{ color: tagColor }} className="flex items-center gap-1 border-2 p-1 rounded-lg font-semibold text-lg"> {tagImage} {currentTask.tags} </p>
