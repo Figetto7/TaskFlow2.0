@@ -125,3 +125,17 @@ body {
   font-weight: 400;
   font-size: 1.25rem;
 }
+
+.redBorder {
+  border: 1px solid var(--overdue-color) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 0.75rem !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0) brightness(0) contrast(1);
+}
+
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(1) contrast(1) !important;
+}

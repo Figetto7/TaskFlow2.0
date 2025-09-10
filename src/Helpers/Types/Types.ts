@@ -56,3 +56,12 @@ export type TagsOption = {
   value: "Choose a category" | "school" | "work" | "personal" | "others";
   label: string;
 }
+
+
+export type FormData = {
+  title: string;
+  description: string;
+  priority: 'low' | 'medium' | 'high' | "Choose a priority",
+  tags: 'school' | 'work' | 'personal' | 'others' | 'Choose a category',
+  dueDate: string;
+}

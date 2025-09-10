@@ -19,6 +19,7 @@ export default function TaskCard({ taskId, isDashboard }: { taskId: string, isDa
   const { priorityText } = getStylesPriority(currentTask.priority);
   const { tagColor, tagImage } = getStylesCategory(currentTask.tags);
   const expired = currentTask.dueDate < new Date() && !currentTask.completed;
+  const classToApply = expired ? "redBorder" : "ultraThinBorder";
 
   const handleTaskToggle = () => {
     if (isDashboard) {
@@ -30,7 +31,7 @@ export default function TaskCard({ taskId, isDashboard }: { taskId: string, isDa
 
   return (
     <>
-      <div className="p-4 m-2 ultraThinBorder flex flex-row gap-2" style={{ opacity: currentTask.completed ? 0.5 : 1, backgroundColor: expired ? 'var(--expired-color)' : ""}}>
+      <div className={`p-4 m-2 ${classToApply} flex flex-row gap-2`} style={{ opacity: currentTask.completed ? 0.5 : 1, backgroundColor: expired ? 'var(--expired-color)' : ""}}>
         <input  type="checkbox" checked={currentTask.completed} className="w-6 h-6 accent-var(--completed-color) mt-2"  onChange={handleTaskToggle} />
         <div className="flex flex-col gap-2">
         <h2 className="text-2xl font-semibold" style={{ textDecoration: currentTask.completed ? 'line-through' : 'none' }}> {currentTask.title} </h2>
