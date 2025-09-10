@@ -12,7 +12,7 @@
   --overdue-color: #dc2626;
   --ultra-thin-border-color: #f3f4f6;
   --priority-high-text: #991b1b;
-  --priority-medium-text: #c2410c;
+  --priority-medium-text: #bd9328;
   --priority-low-text: #166534;
   --school-color: #1d4ed8;
   --work-color: #7c3aed;
@@ -35,6 +35,9 @@
   --sidebar-nav-item-active: #4263b0;
   --sidebar-nav-item-hover-bg: #f3f4f6;
   --expired-color: #f2d4d4;
+  --chart-completed-border: #15803d;
+  --chart-pending-border: #d97706;
+  --chart-overdue-border: #b91c1c;
 }
 
 .dark {
@@ -74,6 +77,9 @@
   --sidebar-nav-item-active: #01ccf5;
   --sidebar-nav-item-hover-bg: #374151;
   --expired-color: #450a0a;
+  --chart-completed-border: #4ade80;
+  --chart-pending-border: #fbbf24;
+  --chart-overdue-border: #f87171;
 }
 
   

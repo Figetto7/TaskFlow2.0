@@ -3,8 +3,8 @@ import StatTaskCard from "../Components/StatTaskCard";
 import { DummyTasks } from "../Helpers/Types/ElementsOfTypes";
 import useTaskStats from "../Hooks/useTaskState";
 import TaskCard from "../Components/TaskCard";
-import PieChartNumberTasks from "../Components/PieChartNumberTasks";
-import GraphCategoryXPriority from "../Components/GraphCategoryXPriority";
+import PieChartNumberTasks from "../Components/Charts/PieChartNumberTasks";
+import GraphCategoryXPriority from "../Components/Charts/GraphPriority";
 import ScrollTopButton from "../Components/ScrollTopButton";
 
 
@@ -35,7 +35,7 @@ export default function Dashboard(): JSX.Element {
         <h1 className="text-3xl font-bold text-center">Analytics Overview</h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-2">
           <PieChartNumberTasks completed={completed} pending={pending} overdue={overdue} />
-          <GraphCategoryXPriority tasks={DummyTasks} />
+          <GraphCategoryXPriority completed={completed} pending={pending} overdue={overdue} />
         </div>
       </div>
     </section> 
