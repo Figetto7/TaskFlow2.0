@@ -5,12 +5,12 @@ import { useMemo } from 'react';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
-export default function GraphCategoryXPriority({completed, pending, overdue}: {completed: number, pending: number, overdue: number}) {
+export default function GraphCategory({completed, pending, overdue}: {completed: number, pending: number, overdue: number}) {
   const { theme } = useTheme();
   const data = useMemo(() => {
-        const HighColor = getComputedStyle(document.documentElement).getPropertyValue('--priority-high-text').trim();
-        const MediumColor = getComputedStyle(document.documentElement).getPropertyValue('--priority-medium-text').trim();
-        const LowColor = getComputedStyle(document.documentElement).getPropertyValue('--priority-low-text').trim();
+        const HighColor = theme === 'dark' ? '#f87171' : '#b91c1c';
+        const MediumColor = theme === 'dark' ? '#fbbf24' : '#d97706';
+        const LowColor = theme === 'dark' ? '#34d399' : '#059669';
        return {
          labels: ['High', 'Medium', 'Low'],
         datasets: [{
@@ -19,7 +19,7 @@ export default function GraphCategoryXPriority({completed, pending, overdue}: {c
           borderWidth: 0,
         }]
        };
-     }, [completed, pending, overdue]);
+     }, [completed, pending, overdue, theme]);
   
 const options = {
   plugins: {

@@ -27,7 +27,8 @@ export type Task = {
   dueDate: Date ,
   priority: 'low' | 'medium' | 'high' | "Choose a priority",
   tags: 'school' | 'work' | 'personal' | 'others' | 'Choose a category',
-  createdAt: Date
+  createdAt: Date,
+  completedAt?: Date,
 }
 
 export type Action = | { type: 'addedTask'; task: Task } | { type: 'deleteTask'; id: string } | { type: 'toggledTask'; id: string } | { type: 'updateTask'; task: Task } | { type: 'Error'; message: string };

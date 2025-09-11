@@ -9,12 +9,12 @@ export default function PieChartNumberTasks({ completed, pending, overdue }: { c
    const { theme } = useTheme();
    
    const data = useMemo(() => {
-     const completedColor = getComputedStyle(document.documentElement).getPropertyValue('--completed-color').trim();
-     const pendingColor = getComputedStyle(document.documentElement).getPropertyValue('--pending-color').trim();
-     const overdueColor = getComputedStyle(document.documentElement).getPropertyValue('--overdue-color').trim();
-     const completedBorder = getComputedStyle(document.documentElement).getPropertyValue('--chart-completed-border').trim();
-     const pendingBorder = getComputedStyle(document.documentElement).getPropertyValue('--chart-pending-border').trim();
-     const overdueBorder = getComputedStyle(document.documentElement).getPropertyValue('--chart-overdue-border').trim();
+     const completedColor = theme === 'dark' ? '#34d399' : '#059669';
+     const pendingColor = theme === 'dark' ? '#fbbf24' : '#d97706';
+     const overdueColor = theme === 'dark' ? '#f87171' : '#b91c1c';
+     const completedBorder = theme === 'dark' ? '#34d399' : '#059669';
+     const pendingBorder = theme === 'dark' ? '#fbbf24' : '#d97706';
+     const overdueBorder = theme === 'dark' ? '#f87171' : '#b91c1c';
      const CompletedNumber = `${completed} Completed`;
      const PendingNumber = `${pending} Pending`;
      const OverdueNumber = `${overdue} Overdue`;
@@ -26,7 +26,7 @@ export default function PieChartNumberTasks({ completed, pending, overdue }: { c
          borderColor: [completedBorder, pendingBorder, overdueBorder],
        }]
      };
-   }, [completed, pending, overdue]);
+   }, [completed, pending, overdue, theme]);
 
 const options = {
   plugins: {

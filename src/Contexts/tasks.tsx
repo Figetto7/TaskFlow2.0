@@ -29,7 +29,6 @@ function loadTasksFromStorage({
       return dummyTasks;
     }
 
-    // Converti le date da stringhe a oggetti Date
     const tasksWithDates = parsed.map(task => ({
       ...task,
       dueDate: new Date(task.dueDate),

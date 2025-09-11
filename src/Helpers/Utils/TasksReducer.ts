@@ -14,6 +14,7 @@ export default function TasksReducer(tasks: Task[], action: Action): Task[] {
           priority: action.task.priority,
           tags: action.task.tags,
           createdAt: new Date(),
+          completedAt: action.task.completed ? new Date() : undefined,
         }
       ];
 
@@ -25,10 +26,11 @@ export default function TasksReducer(tasks: Task[], action: Action): Task[] {
     case 'deleteTask':
       return tasks.filter((task) => task.id !== action.id);
 
-    case 'toggledTask':
-      return tasks.map((task) =>
-        task.id === action.id ? { ...task, completed: !task.completed } : task
-      );
+   case 'toggledTask':
+    return tasks.map((task) =>
+      task.id === action.id? {...task, completed: !task.completed, completedAt: task.completed ? undefined : new Date(), }: task
+  );
+
 
     default:
       throw new Error('Unknown action: ' + action.type);

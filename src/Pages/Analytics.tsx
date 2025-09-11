@@ -4,7 +4,9 @@ import StatTaskCard from "../Components/StatTaskCard";
 import useTaskStats from "../Hooks/useTaskState";
 import ScrollTopButton from "../Components/ScrollTopButton";
 import PieChartNumberTasks from "../Components/Charts/PieChartNumberTasks";
-import GraphCategoryXPriority from "../Components/Charts/GraphPriority";
+import GraphCategory from "../Components/Charts/GraphPriority";
+import  RadarGraphTag  from "../Components/Charts/RadarGrapghTag";
+import  TaskXWeekGraph from "../Components/Charts/TaskXWeekGraph";
 
 export default function Analytics(): JSX.Element {
   const { tasks } = useTasks();
@@ -24,8 +26,11 @@ return (
         <div><StatTaskCard key="overdue" title="Overdue" value={overdue} color="var(--overdue-color)" /></div>
       </div>
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
-       <PieChartNumberTasks completed={completed} pending={pending} overdue={overdue} />
-       <GraphCategoryXPriority completed={completed} pending={pending} overdue={overdue} />
+       
+      <GraphCategory completed={completed} pending={pending} overdue={overdue} />
+      <RadarGraphTag tasks={tasks} />
+      <TaskXWeekGraph tasks={tasks} />
+      <PieChartNumberTasks completed={completed} pending={pending} overdue={overdue} />
       </section>
     </div>
   )
