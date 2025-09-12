@@ -1,4 +1,7 @@
-import type { Task, MenuItem, PriorityOption, TagsOption } from "./Types";
+import type { Task, MenuItem, PriorityOption, TagsOption, AboutInfo } from "./Types";
+import { CheckCircle2, BarChart3, Smartphone, Database } from "lucide-react";
+import { SiChartdotjs, SiReactrouter, SiFirebase, SiTailwindcss, SiTypescript, SiReact } from "react-icons/si";
+
 
 
 export const DummyTasks: Task[] = [
@@ -124,4 +127,21 @@ export const tagsOptions: TagsOption[] = [
   { value: 'work', label: 'Work' },
   { value: 'personal', label: 'Personal' },
   { value: 'others', label: 'Others' }
+]
+
+
+export const mainFeatures: AboutInfo[] = [
+  {title: "Intuitive Task Management", description: "Easily add, edit, and organize your tasks with a user-friendly interface designed for efficiency.", icon: <CheckCircle2 size={60} className="icon"/> },
+  {title: "Responsive Design", description: "Enjoy a seamless experience across all your devices, whether you're on a desktop, tablet, or smartphone.", icon: <Smartphone size={60} className="icon" /> },
+  {title: "Analytics & Insights", description: "Track your productivity with built-in analytics that help you understand your task completion trends.", icon: <BarChart3 size={60} className="icon" /> },
+  {title: "Real Functionalities", description: "Experience a real-word App with real persistence of data and features like priority and tagging.", icon: <Database size={60} className="icon" /> },
+]
+
+export const technologyStack: AboutInfo[] = [
+  {title: "React", description: "A JavaScript library for building user interfaces.", icon: <SiReact size={60} className="icon" />},
+  {title: "TypeScript", description: "A typed superset of JavaScript that compiles to plain JavaScript.", icon: <SiTypescript size={60} className="icon" />},
+  {title: "Tailwind CSS", description: "A utility-first CSS framework for rapid UI development.", icon: <SiTailwindcss size={60} className="icon" />},
+  {title: "FireBase", description: "A Google service for user authentication and identity management.", icon: <SiFirebase size={60} className="icon" />},
+  {title: "React Router", description: "A collection of navigational components for React applications.", icon: <SiReactrouter size={60} className="icon" />},
+  {title: "React-ChartJS-2", description: "A React wrapper for Chart.js, a popular charting library.", icon: <SiChartdotjs size={60} className="icon" />},
 ]

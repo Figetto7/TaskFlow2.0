@@ -3,7 +3,7 @@ import { useForm, Controller } from 'react-hook-form';
 import type { SubmitHandler } from 'react-hook-form';
 import Select from "react-select";
 import { useTasks } from '../Hooks/useTasks';
-import { tagsOptions, priorityOptions } from "../Helpers/Types/ElementsOfTypes";
+import { priorityOptions, tagsOptions } from "../Helpers/Types/ElementsOfTypes";
 import type { Task, FormData } from "../Helpers/Types/Types";
 import { useTheme } from "../Hooks/useTheme";
 

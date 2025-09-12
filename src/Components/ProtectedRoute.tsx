@@ -2,7 +2,7 @@ import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../Hooks/useAuth";
 import SideBarDeskTop from "./SideBarDeskTop";
 import { useIsMobile } from "../Hooks/useIsMobile";
-import HamburgerMenu from "./HamburgerMenu";
+import HamburgerMenu from "./HamburgerMenu"
 
 
 

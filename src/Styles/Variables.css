@@ -38,6 +38,7 @@
   --chart-completed-border: #15803d;
   --chart-pending-border: #d97706;
   --chart-overdue-border: #b91c1c;
+  --icon-bg: #e9ebed;
 }
 
 .dark {
@@ -80,6 +81,7 @@
   --chart-completed-border: #4ade80;
   --chart-pending-border: #fbbf24;
   --chart-overdue-border: #f87171;
+  --icon-bg: #222935;
 }
 
   

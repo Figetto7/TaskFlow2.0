@@ -66,3 +66,9 @@ export type FormData = {
   tags: 'school' | 'work' | 'personal' | 'others' | 'Choose a category',
   dueDate: string;
 }
+
+export type AboutInfo = {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+}

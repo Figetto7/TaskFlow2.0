@@ -139,3 +139,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .dark input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1) brightness(1) contrast(1) !important;
 }
+
+.icon {
+  background-color: var(--icon-bg);
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
