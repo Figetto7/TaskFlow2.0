@@ -111,6 +111,7 @@ export const DummyTasks: Task[] = [
 export const menuItems: MenuItem[] = [
     { path: '/Home', label: 'Home' },
     { path: '/AddTask', label: 'Add Task' },
+    { path: '/ModifyTasks', label: 'Modify Tasks' },
     { path: '/Analytics', label: 'Analytics' },
     { path: '/About', label: 'About' }
   ];

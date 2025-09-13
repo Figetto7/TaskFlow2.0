@@ -3,6 +3,7 @@ import { useAuth } from "../Hooks/useAuth";
 import SideBarDeskTop from "./SideBarDeskTop";
 import { useIsMobile } from "../Hooks/useIsMobile";
 import HamburgerMenu from "./HamburgerMenu"
+import { TbLoader2 } from "react-icons/tb";
 
 
 
@@ -11,7 +12,7 @@ export default function ProtectedRoute() {
   const { user, loading } = useAuth();
 
   if (loading) {
-    return <div className="h-screen grid place-items-center">Caricamento…</div>;
+    return <div className="h-screen grid place-items-center"><TbLoader2 className="animate-spin text-6xl" size={80} /></div>;
   }
   
   if (!user) {

@@ -10,6 +10,7 @@ import Home from "./Pages/Home";
 import AddTask from "./Pages/AddTask";
 import Analytics from "./Pages/Analytics";
 import About from "./Pages/About";
+import ModifyTasks from "./Pages/ModifyTasks";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
       <Route path="/*" element={<ProtectedRoute />}>
         <Route path="home" element={<Home />}/>
         <Route path="addtask" element={<AddTask />}/>
+        <Route path="modifytasks" element={<ModifyTasks />}/>
         <Route path="analytics" element={<Analytics />}/>
         <Route path="about" element={<About />}/>
       </Route>

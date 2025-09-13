@@ -14,7 +14,7 @@ return (
       <section className="grid lg:grid-cols-2 grid-cols-1 gap-4 p-4">
         {mainFeatures.map(feature => <AboutCard key={feature.title} info={feature} />)}
       </section>
-      <h3 className="text-2xl font-semibold mb-3 text-center mt-2">Technology Used</h3>
+      <h3 className="text-2xl font-semibold mb-3 text-center mt-2">Technologies Used</h3>
       <section className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 p-4">
         {technologyStack.map(tech => <AboutCard key={tech.title} info={tech} />)}
       </section>

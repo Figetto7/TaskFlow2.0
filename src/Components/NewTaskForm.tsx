@@ -103,7 +103,7 @@ export default function NewTaskForm() {
         
         <div className="flex flex-row gap-4 mt-4">
           <button type="submit" className="w-1/2 loginButton">Create Task</button>
-          <button type="button" className="w-1/2 redBorder !rounded-sm" style={{ color: "var(--overdue-color)"}} onClick={() => reset()}>Cancel</button>
+          <button type="button" className="w-1/2 redBorder !rounded-sm" style={{ color: "var(--overdue-color)"}} onClick={() => reset()}>Reset</button>
         </div>
       </form>
     </>
