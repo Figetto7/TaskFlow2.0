@@ -38,7 +38,6 @@ The project demonstrates modern React patterns including custom hooks, context p
 ```
 # Struttura Progetto - Basata sulle Immagini Fornite
 
-```
 src/
 ├── Assets/
 │   ├── Images/
@@ -87,7 +86,7 @@ src/
 ├── App.tsx
 ├── firebase.ts
 └── main.tsx
-```
+
 ```
 
 **Components/**: Houses all reusable UI components including specialized chart components in the `Charts/` subdirectory. Contains complex components like modals, forms, and navigation elements.
